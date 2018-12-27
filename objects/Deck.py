@@ -1,6 +1,7 @@
 import random
 from .Card import Card, card_numbers, card_symbols
 
+
 class Deck(object):
     def __init__(self):
         self.cards = []
@@ -15,9 +16,9 @@ class Deck(object):
     def shuffle(self):
         temp_cards = {}
         for card in self.cards:
-            random_number = random.random() #number between 0 and 1
+            random_number = random.random()
             temp_cards[random_number] = card
-        temp_numbers = temp_cards.keys() #.keys() return a list of the dict keys
+        temp_numbers = temp_cards.keys()  # .keys() return a list of the dict keys
         temp_numbers.sort()
         temp_order = []
         for number in temp_numbers:

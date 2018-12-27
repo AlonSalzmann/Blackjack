@@ -11,5 +11,5 @@ class Card(object):
         return str(self)
 
 
-card_numbers = range(1,14,1)
-card_symbols = ["spades","hearts","diamonds","clubs"]
+card_numbers = range(1, 14, 1)
+card_symbols = ["spades", "hearts", "diamonds", "clubs"]
