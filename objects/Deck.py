@@ -1,5 +1,8 @@
 import random
-from .Card import Card, card_numbers, card_symbols
+import Card
+
+card_numbers = Card.card_numbers
+card_symbols = Card.card_symbols
 
 
 class Deck(object):
@@ -7,7 +10,7 @@ class Deck(object):
         self.cards = []
         for number in card_numbers:
             for symbol in card_symbols:
-                temp_card = Card(number, symbol)
+                temp_card = Card.Card(number, symbol)
                 self.cards.append(temp_card)
 
     def draw(self):
@@ -18,11 +21,10 @@ class Deck(object):
         for card in self.cards:
             random_number = random.random()
             temp_cards[random_number] = card
-        temp_numbers = temp_cards.keys()  # .keys() return a list of the dict keys
+        temp_numbers = temp_cards.keys()
         temp_numbers.sort()
         temp_order = []
         for number in temp_numbers:
             temp_order.append(temp_cards[number])
         self.cards = temp_order
         return self.cards
-

@@ -1,5 +1,4 @@
 class Card(object):
-    "Card object containing a number and a symbol"
     def __init__(self, number, symbol):
         self.number = number
         self.symbol = symbol
