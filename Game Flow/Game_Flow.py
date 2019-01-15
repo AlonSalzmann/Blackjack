@@ -81,3 +81,11 @@ def score():
 
 
 player_turn()
+
+'''Traceback (most recent call last):
+  File "C:/Users/pc/PycharmProjects/Blackjack/Game Flow/Game_Flow.py", line 83, in <module>
+    player_turn()
+  File "C:/Users/pc/PycharmProjects/Blackjack/Game Flow/Game_Flow.py", line 29, in player_turn
+    user_decision = input('would you like to hit or hold?')
+  File "<string>", line 1, in <module>
+NameError: name 'hit' is not defined'''
