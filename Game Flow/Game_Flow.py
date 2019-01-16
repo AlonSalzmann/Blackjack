@@ -55,6 +55,7 @@ def dealer_turn():
     if sum(dealer_card_numbers) < 17:
         dealer_cards.append(deck.draw())
         print "player's cards --> " + str(player_cards) + " \ndealer's cards --> " + str(dealer_cards)
+        dealer_turn()
 
     elif 17 <= sum(dealer_card_numbers) < 21:
         print "Dealer holds"
