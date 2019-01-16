@@ -26,11 +26,14 @@ for card in dealer_cards:
 
 def player_turn():
     if sum(player_card_numbers) < 21:
-        user_decision = input('would you like to hit or hold?')
+        user_decision = raw_input('would you like to hit or hold?')
         if user_decision == 'hit':
             player_cards.append(deck.draw())
-            print player_cards, dealer_cards
-            player_turn()
+            if sum(player_card_numbers) < 21:
+                print "player's cards --> " + str(player_cards) + " \ndealer's cards --> " + str(dealer_cards)
+                player_turn()
+            else:
+                print "Player Burnt! \nDealer's turn!"
 
         elif user_decision == 'hold':
             print "Dealer's turn!"
@@ -49,15 +52,16 @@ def player_turn():
 
 
 def dealer_turn():
-    if sum(dealer_card_numbers) < 17:
+    while sum(dealer_card_numbers) < 17:
         dealer_cards.append(deck.draw())
+        print "player's cards --> " + str(player_cards) + " \ndealer's cards --> " + str(dealer_cards)
 
-    elif 17 <= sum(dealer_card_numbers) <= 21:
+    if 17 <= sum(dealer_card_numbers) < 21:
         print "Dealer holds"
         print dealer_cards
         score()
 
-    elif sum(dealer_card_numbers) == 21:
+    if sum(dealer_card_numbers) == 21:
         print "It's a draw!"
         score()
 
@@ -81,11 +85,3 @@ def score():
 
 
 player_turn()
-
-'''Traceback (most recent call last):
-  File "C:/Users/pc/PycharmProjects/Blackjack/Game Flow/Game_Flow.py", line 83, in <module>
-    player_turn()
-  File "C:/Users/pc/PycharmProjects/Blackjack/Game Flow/Game_Flow.py", line 29, in player_turn
-    user_decision = input('would you like to hit or hold?')
-  File "<string>", line 1, in <module>
-NameError: name 'hit' is not defined'''
