@@ -32,6 +32,9 @@ def player_turn():
             if sum(player_card_numbers) < 21:
                 print "player's cards --> " + str(player_cards) + " \ndealer's cards --> " + str(dealer_cards)
                 player_turn()
+            elif sum(player_card_numbers) == 21:
+                print "Blackjack!"
+                dealer_turn()
             else:
                 print "Player Burnt! \nDealer's turn!"
                 dealer_turn()
