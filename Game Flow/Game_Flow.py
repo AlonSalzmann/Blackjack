@@ -34,6 +34,7 @@ def player_turn():
                 player_turn()
             else:
                 print "Player Burnt! \nDealer's turn!"
+                dealer_turn()
 
         elif user_decision == 'hold':
             print "Dealer's turn!"
