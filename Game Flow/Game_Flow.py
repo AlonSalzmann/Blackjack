@@ -52,16 +52,16 @@ def player_turn():
 
 
 def dealer_turn():
-    while sum(dealer_card_numbers) < 17:
+    if sum(dealer_card_numbers) < 17:
         dealer_cards.append(deck.draw())
         print "player's cards --> " + str(player_cards) + " \ndealer's cards --> " + str(dealer_cards)
 
-    if 17 <= sum(dealer_card_numbers) < 21:
+    elif 17 <= sum(dealer_card_numbers) < 21:
         print "Dealer holds"
         print dealer_cards
         score()
 
-    if sum(dealer_card_numbers) == 21:
+    elif sum(dealer_card_numbers) == 21:
         print "It's a draw!"
         score()
 
